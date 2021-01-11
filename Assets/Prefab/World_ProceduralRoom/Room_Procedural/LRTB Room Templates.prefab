@@ -46,8 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Objects:
   - {fileID: 863792581021181258, guid: 43157d95c90be464e8114e76c2c9c259, type: 3}
-  _IsFirstRooms: 0
-  _IsLastRooms: 0
+  _NbRoomGreatPath: 999999
+  _NbOfRoomsGreatPath: 0
+  _IsGreatPath: 0
+  _GameObjectEntre: {fileID: 3563097079595161310, guid: a714ad4894fbd224bb7ab7de64733bdd, type: 3}
+  _GameObjectSortie: {fileID: 3966514400021118585, guid: 3ae3fbb3f0de4da449ce97627f869434, type: 3}
 --- !u!114 &-7457234651895605921
 MonoBehaviour:
   m_ObjectHideFlags: 0
