@@ -184,9 +184,9 @@ public class GenerationProceduralLevel : MonoBehaviour
                 //Numerote les salles du Script "SpawnObject" 
                 for(int i = 0 ; i < _ListGameObjectGreathPathCorrect.Count; i ++)
                 {
-                    _ListGameObjectGreathPathCorrect[i].GetComponent<SpawnObject>()._NbRoomGreatPath = i;
-                    _ListGameObjectGreathPathCorrect[i].GetComponent<SpawnObject>()._NbOfRoomsGreatPath = _ListGameObjectGreathPathCorrect.Count - 1;
-                    _ListGameObjectGreathPathCorrect[i].GetComponent<SpawnObject>()._IsGreatPath = true;
+                    _ListGameObjectGreathPathCorrect[i].GetComponent<SpawnRandomRooms>()._NbRoomGreatPath = i;
+                    _ListGameObjectGreathPathCorrect[i].GetComponent<SpawnRandomRooms>()._NbOfRoomsGreatPath = _ListGameObjectGreathPathCorrect.Count - 1;
+                    _ListGameObjectGreathPathCorrect[i].GetComponent<SpawnRandomRooms>()._IsGreatPath = true;
                 }
             }
 
