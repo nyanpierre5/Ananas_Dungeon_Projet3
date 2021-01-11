@@ -129,14 +129,16 @@ public class GenerationProceduralLevel : MonoBehaviour
                     if(roomDetection[0].GetComponent<RoomType>()._Type != 1 && roomDetection[0].GetComponent<RoomType>()._Type != 3)
                     {
 
-                        if(_DownCounter <=2)
+                        if(_DownCounter >=2)
                         {
+                            Debug.Log("de");
                             roomDetection[0].GetComponent<RoomType>().RoomDestroy();
                             GameObject LastRoomInstantiate = Instantiate(_Rooms[3], transform.position,Quaternion.identity);
                             LastRoomInstantiate.transform.parent = _ParentGreatPath;
                             _ListGameObjectGreatPath.Add(LastRoomInstantiate);
                         }
-
+                        
+                        
                         else
                         {
                             roomDetection[0].GetComponent<RoomType>().RoomDestroy();
@@ -151,6 +153,7 @@ public class GenerationProceduralLevel : MonoBehaviour
                             LastRoomInstantiate.transform.parent = _ParentGreatPath;
                             _ListGameObjectGreatPath.Add(LastRoomInstantiate);
                         }
+                        
                     }
                 }
 
