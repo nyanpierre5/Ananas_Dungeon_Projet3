@@ -6,6 +6,7 @@ public class MoveIA : MonoBehaviour
 {
     public CharacterController _CharacterController;
     public float _Speed;
+    public float _InitialSpeed;
     public float _SpeedRotate;
     public float _InitialSpeedRotate;
     public Transform _PointForwardLocal;
@@ -17,6 +18,7 @@ public class MoveIA : MonoBehaviour
 
     void Start()
     {
+        _InitialSpeed = _Speed;
         _InitialSpeedRotate = _SpeedRotate;
         _Player = GameObject.FindGameObjectWithTag("Player");
         lookAtPlayer();
@@ -83,5 +85,28 @@ public class MoveIA : MonoBehaviour
     {
         Vector3 DirectionPlayer = new Vector3(_Player.transform.position.x - transform.position.x,_Player.transform.position.y - transform.position.y, _Player.transform.position.z - transform.position.z);
         return DirectionPlayer;
+    }
+
+    public void Slow(float Duration, float TauxSlow)
+    {
+        float NewSpeed = _InitialSpeed * TauxSlow;
+        if(_Speed != _InitialSpeed && _Speed < NewSpeed)
+        {
+            //Ne slow pas
+        }
+        else
+        {
+            //Slow
+            _Speed = NewSpeed;
+        }
+
+        StopAllCoroutines();
+        StartCoroutine(WaitSlow(Duration));
+    }
+
+    IEnumerator WaitSlow(float Duration) 
+    {
+        yield return new WaitForSeconds(Duration);
+        _Speed = _InitialSpeed;
     }
 }
