@@ -11,11 +11,25 @@ public class movement : MonoBehaviour
     
     public InputAction mouseshoot;
     */
-    public GameObject projectile;
+    public GameObject Fire;
+    public GameObject Thunder;
+    public GameObject Ice;
+    public GameObject FireSelection;
+    public GameObject ThunderSelection;
+    public GameObject IceSelection;
+
+
 
     public float speed;
 
     public CharacterController controller;
+
+    public Transform bulletset;
+
+    static float power = 1;
+ 
+
+
 
     void Start()
     {
@@ -53,15 +67,62 @@ public class movement : MonoBehaviour
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 600);
         }
         */
-        if (Input.GetKeyDown(KeyCode.Space))
+
+
+        if (Input.GetKeyDown(KeyCode.Space) && power == 1)
         {
-            GameObject bullet = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
+            GameObject bullet = Instantiate(Fire, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 600);
         }
+        if (Input.GetKeyDown(KeyCode.Space) && power == 2)
+        {
+            GameObject bullet = Instantiate(Thunder, bulletset.transform.position, Quaternion.identity) as GameObject;
+            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 600);
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && power == 3)
+        {
+            GameObject bullet = Instantiate(Ice, bulletset.transform.position, Quaternion.identity) as GameObject;
+            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 600);
+        }
+        if (power == 1)
+        {
+            FireSelection.SetActive(true);
+            ThunderSelection.SetActive(false);
+            IceSelection.SetActive(false);
+        }
+        if (power == 2)
+        {
+            FireSelection.SetActive(false);
+            ThunderSelection.SetActive(true);
+            IceSelection.SetActive(false);
+        }
+        if (power == 3)
+        {
+            FireSelection.SetActive(false);
+            ThunderSelection.SetActive(false);
+            IceSelection.SetActive(true);
+        }
+
+
+
         Move();
+
+        if (Input.GetKeyDown(KeyCode.RightShift))
+        {
+            power += 1;
+        }
+        if (power >= 4)
+        {
+            power = 1;
+        }
+
+
+
     }
      void Move()
     {
+        
+
         float horizontalMove = Input.GetAxis("Horizontal");
         float verticallMove = Input.GetAxis("Vertical");
 
