@@ -27,8 +27,6 @@ public class movement : MonoBehaviour
     public Transform bulletset;
 
     static float power = 1;
- 
-
 
 
     void Start()
@@ -116,7 +114,17 @@ public class movement : MonoBehaviour
             power = 1;
         }
 
+        if( Input.GetKeyDown(KeyCode.A))
+        {
+            float angle = -90;
+            RotateY(angle);
+        }
 
+        if( Input.GetKeyDown(KeyCode.E))
+        {
+            float angle = 90;
+            RotateY(angle);
+        }
 
     }
      void Move()
@@ -126,10 +134,18 @@ public class movement : MonoBehaviour
         float horizontalMove = Input.GetAxis("Horizontal");
         float verticallMove = Input.GetAxis("Vertical");
 
-
-        Vector3 move = transform.forward * verticallMove + transform.right * horizontalMove;
+        Vector3 move = new Vector3(0,0,1) * verticallMove + new Vector3(1,0,0) * horizontalMove;
         controller.Move(speed * Time.deltaTime * move);
     }
+
+    public void RotateY(float angleY)
+    {
+        transform.Rotate(0, angleY, 0, Space.Self);
+    }
+
+
+    
+
 
 
 

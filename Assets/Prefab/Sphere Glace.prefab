@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1038430746152413385}
   - component: {fileID: 7725113585445608971}
   - component: {fileID: 1528571941069314099}
+  - component: {fileID: -5941685107213847246}
   m_Layer: 0
   m_Name: Sphere Glace
   m_TagString: Glace
@@ -113,3 +114,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-5941685107213847246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2284782081305079083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679c4573d96baf740af0d91bd5a354d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _WhatIsWall:
+    serializedVersion: 2
+    m_Bits: 512
+  _WhatIsAlive:
+    serializedVersion: 2
+    m_Bits: 128
+  _DommageHit: 5
+  _DurationSlow: 2
+  _TauxSlow: 0.5
