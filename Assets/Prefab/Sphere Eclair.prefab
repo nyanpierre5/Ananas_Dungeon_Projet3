@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1038430746152413385}
   - component: {fileID: 7725113585445608971}
   - component: {fileID: 1528571941069314099}
+  - component: {fileID: 6579733636940743928}
   m_Layer: 0
   m_Name: Sphere Eclair
   m_TagString: Eclair
@@ -113,3 +114,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6579733636940743928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2284782081305079083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93f057e78f59f7a42b63f714ad821a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _WhatIsWall:
+    serializedVersion: 2
+    m_Bits: 512
+  _WhatIsAlive:
+    serializedVersion: 2
+    m_Bits: 128
+  _DommageHit: 5
+  _Rigidbody: {fileID: 1528571941069314099}
+  _NbRebondMax: 3
+  _LastHitted: {fileID: 0}

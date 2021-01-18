@@ -45,6 +45,7 @@ public class LifePoint : MonoBehaviour
                 _Health -= _DommagePerHit;
                 _TimerBurn = 0;
                 _NbTicBrulure--;
+                CheckIfDie();
             }
         }
 

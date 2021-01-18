@@ -16,8 +16,11 @@ public class MoveIA : MonoBehaviour
     public bool _ModeHunt;
     public LayerMask _WhatIsWall;
 
+    public float _InitialHauteur;
+
     void Start()
     {
+        _InitialHauteur = transform.position.y;
         _InitialSpeed = _Speed;
         _InitialSpeedRotate = _SpeedRotate;
         _Player = GameObject.FindGameObjectWithTag("Player");
@@ -57,6 +60,7 @@ public class MoveIA : MonoBehaviour
             MoveForward();
         }
 
+        ActualiseHauteur();
     }
 
     public void MoveForward()
@@ -72,7 +76,8 @@ public class MoveIA : MonoBehaviour
 
     void lookAtPlayer()
     {
-        transform.LookAt(_Player.transform);
+        Vector3 PosPlayer  = new Vector3(_Player.transform.position.x , transform.position.y , _Player.transform.position.z);
+        transform.LookAt(PosPlayer);
     }
 
     float CalculDistanceWithPlayer()
@@ -102,6 +107,11 @@ public class MoveIA : MonoBehaviour
 
         StopAllCoroutines();
         StartCoroutine(WaitSlow(Duration));
+    }
+
+    public void ActualiseHauteur()
+    {
+        transform.position = new Vector3(transform.position.x , _InitialHauteur ,transform.position.z);
     }
 
     IEnumerator WaitSlow(float Duration) 
