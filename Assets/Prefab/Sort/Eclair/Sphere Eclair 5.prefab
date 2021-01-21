@@ -162,9 +162,9 @@ MonoBehaviour:
   _WhatIsAlive:
     serializedVersion: 2
     m_Bits: 128
-  _DommageHit: 5
+  _DommageHit: 25
   _Rigidbody: {fileID: 1528571941069314099}
-  _NbRebondMax: 3
+  _NbRebondMax: 5
   _LastHitted: {fileID: 0}
 --- !u!1 &2393625698536650888
 GameObject:

@@ -215,6 +215,6 @@ MonoBehaviour:
   _WhatIsAlive:
     serializedVersion: 2
     m_Bits: 128
-  _DommageHit: 5
-  _DommagePerHitBurn: 5
+  _DommageHit: 10
+  _DommagePerHitBurn: 7
   _NbTicBurn: 10
