@@ -18,6 +18,7 @@ public class movement : MonoBehaviour
     public GameObject ThunderSelection;
     public GameObject IceSelection;
 
+    public Animator anim;
 
 
     public float speed;
@@ -71,16 +72,39 @@ public class movement : MonoBehaviour
         {
             GameObject bullet = Instantiate(Fire, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 600);
+            
+           
+            anim.SetBool("fire", true);
+            
+          
+
+        }
+        else
+        {
+            anim.SetBool("fire", false);
         }
         if (Input.GetKeyDown(KeyCode.Space) && power == 2)
         {
             GameObject bullet = Instantiate(Thunder, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 600);
+
+            anim.SetBool("thunder", true);
+        }
+    
+        else
+        {
+            anim.SetBool("thunder", false);
         }
         if (Input.GetKeyDown(KeyCode.Space) && power == 3)
         {
             GameObject bullet = Instantiate(Ice, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 600);
+
+            anim.SetBool("Ice", true);
+        }
+        else
+        {
+            anim.SetBool("Ice", false);
         }
         if (power == 1)
         {
@@ -100,8 +124,7 @@ public class movement : MonoBehaviour
             ThunderSelection.SetActive(false);
             IceSelection.SetActive(true);
         }
-
-
+      
 
         Move();
 
@@ -125,6 +148,14 @@ public class movement : MonoBehaviour
             float angle = 90;
             RotateY(angle);
         }
+        if (controller.velocity.x == 0 && controller.velocity.y == 0 && controller.velocity.z == 0)
+        {
+            anim.SetBool("isWalking", false);
+        }
+        else
+        {
+            anim.SetBool("isWalking", true);
+        }
 
     }
      void Move()
@@ -136,6 +167,7 @@ public class movement : MonoBehaviour
 
         Vector3 move = new Vector3(0,0,1) * verticallMove + new Vector3(1,0,0) * horizontalMove;
         controller.Move(speed * Time.deltaTime * move);
+
     }
 
     public void RotateY(float angleY)
