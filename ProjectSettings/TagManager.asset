@@ -8,6 +8,11 @@ TagManager:
   - Feu
   - Glace
   - Monster
+  - Coin
+  - Key
+  - UpFire
+  - UpThunder
+  - UpIce
   layers:
   - Default
   - TransparentFX
