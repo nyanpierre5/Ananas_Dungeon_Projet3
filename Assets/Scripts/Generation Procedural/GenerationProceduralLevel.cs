@@ -30,9 +30,25 @@ public class GenerationProceduralLevel : MonoBehaviour
     public List<GameObject> _ListGameObjectGreatPath;
     public List<GameObject> _ListGameObjectGreathPathCorrect; // Comme _ListGameObjectGreatPath sans les trous des salles détruites
 
-    // Start is called before the first frame update
-    private void Start()
+    public List<GameObject> _AllSpawnRooms;
+    private void Start() 
     {
+        Init();
+    }
+
+    public void Init()
+    {
+        _ListGameObjectGreatPath.Clear();
+        _ListGameObjectGreathPathCorrect.Clear();
+
+        _StopGeneration = false;
+
+        for(int i = 0 ; i < _AllSpawnRooms.Count ; i++)
+        {
+            _AllSpawnRooms[i].SetActive(true);
+        }
+
+        GameManager._GameManager.LaunchTransition(10);
         GenerateFirstStage();
     }
 
@@ -131,7 +147,6 @@ public class GenerationProceduralLevel : MonoBehaviour
 
                         if(_DownCounter >=2)
                         {
-                            Debug.Log("de");
                             roomDetection[0].GetComponent<RoomType>().RoomDestroy();
                             GameObject LastRoomInstantiate = Instantiate(_Rooms[3], transform.position,Quaternion.identity);
                             LastRoomInstantiate.transform.parent = _ParentGreatPath;

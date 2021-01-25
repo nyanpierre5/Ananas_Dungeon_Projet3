@@ -23,8 +23,8 @@ public class BulletFire : MonoBehaviour
 
         if(_WhatIsAlive.Contains(other.gameObject.layer))
         {
-            other.gameObject.GetComponent<LifePoint>().LostHealth(_DommageHit);
-            other.gameObject.GetComponent<LifePoint>().OnBurn(_NbTicBurn , _DommagePerHitBurn);
+            other.gameObject.GetComponent<DropMonstre>().LostHealth(_DommageHit);
+            other.gameObject.GetComponent<DropMonstre>().OnBurn(_NbTicBurn , _DommagePerHitBurn);
 
             Debug.Log("Fire");
             Destroy(gameObject);
@@ -40,8 +40,8 @@ public class BulletFire : MonoBehaviour
         
         if(_WhatIsAlive.Contains(other.gameObject.layer))
         {
-            other.gameObject.GetComponent<LifePoint>().LostHealth(_DommageHit);
-            other.gameObject.GetComponent<LifePoint>().OnBurn(_NbTicBurn , _DommagePerHitBurn);
+            other.gameObject.GetComponent<DropMonstre>().LostHealth(_DommageHit);
+            other.gameObject.GetComponent<DropMonstre>().OnBurn(_NbTicBurn , _DommagePerHitBurn);
 
             Debug.Log("Fire");
             Destroy(gameObject);
