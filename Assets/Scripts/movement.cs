@@ -28,6 +28,8 @@ public class movement : MonoBehaviour
     public GameObject Thunder5;
     public GameObject Ice5;
 
+    public Animator anim;
+
 
 
 
@@ -100,6 +102,13 @@ public class movement : MonoBehaviour
         {
             GameObject bullet = Instantiate(Fire1, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
+
+            anim.SetBool("fire", true);
+        }
+        else
+        {
+            anim.SetBool("fire", false);
+        
         }
         if (Input.GetKeyDown(KeyCode.Space) && Sort == 1 && PowerFeu == 2)
         {
@@ -128,6 +137,14 @@ public class movement : MonoBehaviour
         {
             GameObject bullet = Instantiate(Thunder1, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
+
+            anim.SetBool("thunder", true);
+        }
+
+        else
+        {
+            anim.SetBool("thunder", false);
+        
         }
         if (Input.GetKeyDown(KeyCode.Space) && Sort == 2 && PowerEclair == 2)
         {
@@ -157,6 +174,12 @@ public class movement : MonoBehaviour
         {
             GameObject bullet = Instantiate(Ice1, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
+
+            anim.SetBool("Ice", true);
+        }
+        else
+        {
+            anim.SetBool("Ice", false);
         }
         if (Input.GetKeyDown(KeyCode.Space) && Sort == 3 && PowerGlace == 2)
         {
@@ -229,7 +252,14 @@ public class movement : MonoBehaviour
             float angle = 90;
             RotateY(angle);
         }
-
+        if (controller.velocity.x == 0 && controller.velocity.y == 0 && controller.velocity.z == 0)
+        {
+            anim.SetBool("isWalking", false);
+        }
+        else
+        {
+            anim.SetBool("isWalking", true);
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -281,6 +311,7 @@ public class movement : MonoBehaviour
 
         Vector3 move = new Vector3(0,0,1) * verticallMove + new Vector3(1,0,0) * horizontalMove;
         controller.Move(speed * Time.deltaTime * move);
+
     }
 
     public void RotateY(float angleY)
