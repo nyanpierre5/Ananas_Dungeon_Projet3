@@ -13,13 +13,15 @@ public class SpawnRandomRooms : MonoBehaviour
     public GameObject _GameObjectSortie;
 
     private bool _FirstSpawn;
+
+    private GameObject _Room;
     
 
     void Start()
     {
         int rand = Random.Range(0, _Objects.Count);
-        GameObject LastInstantiate = Instantiate(_Objects[rand], transform.position, Quaternion.identity);
-        LastInstantiate.transform.parent = transform;
+        _Room = Instantiate(_Objects[rand], transform.position, Quaternion.identity);
+        _Room.transform.parent = transform;
     }
 
     private void Update() 
@@ -29,6 +31,9 @@ public class SpawnRandomRooms : MonoBehaviour
             GameObject _LastInstantiate = Instantiate(_GameObjectEntre, transform.position , Quaternion.identity);
             _LastInstantiate.transform.parent = transform;
             _FirstSpawn = true;
+
+            SpawnMonster MySpawnMonster = _Room.GetComponentInChildren<SpawnMonster>();
+            Destroy(MySpawnMonster);
         }
 
         if(_NbRoomGreatPath == _NbOfRoomsGreatPath && _FirstSpawn == false)
@@ -36,6 +41,9 @@ public class SpawnRandomRooms : MonoBehaviour
             GameObject _LastInstantiate = Instantiate(_GameObjectSortie, transform.position , Quaternion.identity);
             _LastInstantiate.transform.parent = transform;
             _FirstSpawn = true;
+
+            SpawnMonster MySpawnMonster = _Room.GetComponentInChildren<SpawnMonster>();
+            Destroy(MySpawnMonster);
         }
     }
 

@@ -57,6 +57,9 @@ public class movement : MonoBehaviour
     static float PowerGlace = 1;
 
 
+    //Orientation
+    public float MyRotate = 0;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -65,37 +68,8 @@ public class movement : MonoBehaviour
 
     }
 
-    /*
-    void OnEnable()
-    {
-        zqsd.Enable();
-        fireAction.Enable();
-        mouseshoot.Enable();
-    }
-    void OnDisable()
-    {
-        zqsd.Disable();
-        fireAction.Disable();
-        mouseshoot.Disable();
-    }
-    */
-    // Update is called once per frame
     void Update()
     {
-        /*
-        Vector2 inputVector = zqsd.ReadValue<Vector2>();
-        Vector3 finalVector = new Vector3();
-
-        finalVector.x = inputVector.x;
-        finalVector.z = inputVector.y;
-        controller.Move(finalVector * Time.deltaTime * 5f);
-
-        if (fireAction.triggered)
-        {
-          GameObject bullet = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
-            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 600);
-        }
-        */
 
         //Feu
         if (Input.GetKeyDown(KeyCode.Space) && Sort == 1 && PowerFeu == 1)
@@ -241,17 +215,29 @@ public class movement : MonoBehaviour
             Sort = 1;
         }
 
-        if( Input.GetKeyDown(KeyCode.A))
+        if( Input.GetKeyDown(KeyCode.UpArrow))
         {
-            float angle = -90;
-            RotateY(angle);
+            RotateY(0 - MyRotate);
+            MyRotate = 0;
         }
 
-        if( Input.GetKeyDown(KeyCode.E))
+        if( Input.GetKeyDown(KeyCode.DownArrow))
         {
-            float angle = 90;
-            RotateY(angle);
+            RotateY(180 - MyRotate);
+            MyRotate = 180;
         }
+        if( Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            RotateY(-90 - MyRotate);
+            MyRotate = -90;
+        }
+        if( Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            RotateY(90 - MyRotate);
+            MyRotate = 90;
+        }
+
+
         if (controller.velocity.x == 0 && controller.velocity.y == 0 && controller.velocity.z == 0)
         {
             anim.SetBool("isWalking", false);
@@ -304,12 +290,48 @@ public class movement : MonoBehaviour
 
     void Move()
     {
-        
+        Vector3 move = new Vector3(0,0,0);
 
-        float horizontalMove = Input.GetAxis("Horizontal");
-        float verticallMove = Input.GetAxis("Vertical");
+        if(Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            if(Input.GetKey(KeyCode.Z))
+            {
+                move.z = 1;
+                if(Input.GetKey(KeyCode.S))
+                {
+                    move.z = 0;
+                }
+            }
 
-        Vector3 move = new Vector3(0,0,1) * verticallMove + new Vector3(1,0,0) * horizontalMove;
+            if(Input.GetKey(KeyCode.S))
+            {
+                move.z = -1;
+                if(Input.GetKey(KeyCode.Z))
+                {
+                    move.z = 0;
+                }
+            }
+
+            if(Input.GetKey(KeyCode.Q))
+            {
+                move.x = -1;
+                if(Input.GetKey(KeyCode.D))
+                {
+                    move.x = 0;
+                }
+            }
+
+            if(Input.GetKey(KeyCode.D))
+            {
+                move.x = 1;
+                if(Input.GetKey(KeyCode.Q))
+                {
+                    move.x = 0;
+                }
+            }
+        }
+
+        move = move.normalized;
         controller.Move(speed * Time.deltaTime * move);
 
     }

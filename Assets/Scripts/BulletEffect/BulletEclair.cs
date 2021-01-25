@@ -25,7 +25,7 @@ public class BulletEclair : MonoBehaviour
         if(_WhatIsAlive.Contains(other.gameObject.layer) && other.gameObject != _LastHitted)
         {
             _LastHitted = other.gameObject;
-            other.gameObject.GetComponent<LifePoint>().LostHealth(_DommageHit);
+            other.gameObject.GetComponent<DropMonstre>().LostHealth(_DommageHit);
             _NbRebond ++;
 
             //Rebond
@@ -36,17 +36,29 @@ public class BulletEclair : MonoBehaviour
                 //Calcule de l'ia la plus proche
                 GameObject IALaPlusProche = otherZoneEffetEclair._IAProche[0];
 
-                for(int i = 0 ; i < otherZoneEffetEclair._IAProche.Count ; i++)
+                if(otherZoneEffetEclair._IAProche.Count >= 2)
                 {
-                    if(Vector3.Distance(IALaPlusProche.transform.position, transform.position) > Vector3.Distance(otherZoneEffetEclair._IAProche[i].transform.position, transform.position))
+                    for(int i = 0 ; i < otherZoneEffetEclair._IAProche.Count ; i++)
                     {
-                        IALaPlusProche = otherZoneEffetEclair._IAProche[i];
+                        if(IALaPlusProche != null)
+                        {
+                            if(Vector3.Distance(IALaPlusProche.transform.position, transform.position) > Vector3.Distance(otherZoneEffetEclair._IAProche[i].transform.position, transform.position))
+                            {
+                                IALaPlusProche = otherZoneEffetEclair._IAProche[i];
+                            }
+                        }
                     }
                 }
-
                 // Change la direction du missile
 
-                ChangeTarget(IALaPlusProche.transform);
+                if(IALaPlusProche != null)
+                {
+                    ChangeTarget(IALaPlusProche.transform);
+                }
+                else
+                {
+                    Destroy(gameObject);
+                }
                 
             }
 

@@ -19,6 +19,7 @@ public class SpawnMonster : MonoBehaviour
     }
     public void Instantiate()
     {
+        
         for(int i = 0 ; i < _NbPaternToSpawn; i++)
         {
             int rand = Random.Range(0, _ObjectsCopied.Count);

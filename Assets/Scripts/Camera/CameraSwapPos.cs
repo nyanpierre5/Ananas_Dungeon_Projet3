@@ -48,6 +48,10 @@ public class CameraSwapPos : MonoBehaviour
                 InstantiateSalle();
             }
         }
+        if(_SpawnMonster == null)
+        {
+            EndChallengeRoom();
+        }
     }
 
     public void InstantiateSalle()

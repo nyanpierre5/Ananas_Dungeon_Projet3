@@ -18,11 +18,11 @@ public class SpawnRooms : MonoBehaviour
             int rand = Random.Range(0, _GenerationProceduralLevel._Rooms.Count);
             GameObject lastRoomsInstantiate = Instantiate(_GenerationProceduralLevel._Rooms[rand], transform.position, Quaternion.identity);
             lastRoomsInstantiate.transform.parent = _ParentOtherRooms;
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
         else if(_GenerationProceduralLevel._StopGeneration == true)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
         
     }
