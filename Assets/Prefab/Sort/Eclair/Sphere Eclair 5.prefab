@@ -166,6 +166,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3456450792919840624}
     m_Modifications:
+    - target: {fileID: 7316637223390327242, guid: 8277bb8064a163d4885a70b1578674c8, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7316637223409625254, guid: 8277bb8064a163d4885a70b1578674c8, type: 3}
       propertyPath: m_Name
       value: LightningRotateBall

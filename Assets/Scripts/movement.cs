@@ -344,7 +344,7 @@ public class movement : MonoBehaviour
             CounterK.text = "" + KeyValue;
             Destroy(other.gameObject);
         }
-        if (other.tag == "UpFire" && PowerFeu <=5 )
+        if (other.tag == "UpFire" && FireLVlValue <=4 )
         {
             FireLVlValue += 1;
             FireLvl.text = "" + FireLVlValue;
@@ -352,7 +352,7 @@ public class movement : MonoBehaviour
        
             Destroy(other.gameObject);
         }
-        if (other.tag == "UpThunder" && PowerEclair <= 5)
+        if (other.tag == "UpThunder" && ThunderLVlValue <= 4)
         {
 
             ThunderLVlValue += 1;
@@ -361,7 +361,7 @@ public class movement : MonoBehaviour
 
             Destroy(other.gameObject);
         }
-        if (other.tag == "UpIce" && PowerGlace <= 5)
+        if (other.tag == "UpIce" && IceLVlValue <= 4)
         {
             IceLVlValue += 1;
             IceLvl.text = "" + IceLVlValue;
@@ -406,6 +406,7 @@ public class movement : MonoBehaviour
 
             if(Input.GetKey(KeyCode.D))
             {
+
                 move.x = 1;
                 if(Input.GetKey(KeyCode.Q))
                 {
