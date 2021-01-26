@@ -13,6 +13,9 @@ TagManager:
   - UpFire
   - UpThunder
   - UpIce
+  - FireTarget
+  - IceTarget
+  - ThunderTarget
   layers:
   - Default
   - TransparentFX

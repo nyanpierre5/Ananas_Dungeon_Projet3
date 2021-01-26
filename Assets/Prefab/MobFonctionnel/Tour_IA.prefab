@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c90f454d646d348a9d3a6b6af5f9cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Health: 100
+  _Health: 20
   _NbTicBrulure: 0
   _IntervalEntreHitBrulure: 0.5
   _TauxDropBonusEnPourcentage: 15
