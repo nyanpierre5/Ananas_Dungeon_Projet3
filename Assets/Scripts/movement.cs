@@ -43,7 +43,12 @@ public class movement : MonoBehaviour
     public Text CounterK;
      float KeyValue = 0;
 
-  
+    public Text FireLvl;
+    public Text ThunderLvl;
+    public Text IceLvl;
+    float FireLVlValue = 1;
+    float ThunderLVlValue = 1;
+    float IceLVlValue = 1;
 
     public float speed;
 
@@ -64,7 +69,9 @@ public class movement : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
 
-     
+        FireLvl.text = "" + FireLVlValue;
+        ThunderLvl.text = "" + ThunderLVlValue;
+        IceLvl.text = "" + IceLVlValue;
 
     }
 
@@ -88,21 +95,45 @@ public class movement : MonoBehaviour
         {
             GameObject bullet = Instantiate(Fire2, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
+            anim.SetBool("fire", true);
+        }
+        else
+        {
+            anim.SetBool("fire", false);
+
         }
         if (Input.GetKeyDown(KeyCode.Space) && Sort == 1 && PowerFeu == 3)
         {
             GameObject bullet = Instantiate(Fire3, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
+            anim.SetBool("fire", true);
+        }
+        else
+        {
+            anim.SetBool("fire", false);
+
         }
         if (Input.GetKeyDown(KeyCode.Space) && Sort == 1 && PowerFeu == 4)
         {
             GameObject bullet = Instantiate(Fire4, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
+            anim.SetBool("fire", true);
+        }
+        else
+        {
+            anim.SetBool("fire", false);
+
         }
         if (Input.GetKeyDown(KeyCode.Space) && Sort == 1 && PowerFeu >= 5)
         {
             GameObject bullet = Instantiate(Fire5, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
+            anim.SetBool("fire", true);
+        }
+        else
+        {
+            anim.SetBool("fire", false);
+
         }
 
 
@@ -124,22 +155,50 @@ public class movement : MonoBehaviour
         {
             GameObject bullet = Instantiate(Thunder2, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
+            anim.SetBool("thunder", true);
+        }
+
+        else
+        {
+            anim.SetBool("thunder", false);
+
         }
         if (Input.GetKeyDown(KeyCode.Space) && Sort == 2 && PowerEclair == 3)
         {
             GameObject bullet = Instantiate(Thunder3, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
+            anim.SetBool("thunder", true);
+        }
+
+        else
+        {
+            anim.SetBool("thunder", false);
+
         }
         if (Input.GetKeyDown(KeyCode.Space) && Sort == 2 && PowerEclair == 4)
         {
             GameObject bullet = Instantiate(Thunder4, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
 
+            anim.SetBool("thunder", true);
+        }
+
+        else
+        {
+            anim.SetBool("thunder", false);
+
         }
         if (Input.GetKeyDown(KeyCode.Space) && Sort == 2 && PowerEclair == 5)
         {
             GameObject bullet = Instantiate(Thunder5, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
+            anim.SetBool("thunder", true);
+        }
+
+        else
+        {
+            anim.SetBool("thunder", false);
+
         }
 
 
@@ -159,25 +218,45 @@ public class movement : MonoBehaviour
         {
             GameObject bullet = Instantiate(Ice2, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
+            anim.SetBool("Ice", true);
+        }
+        else
+        {
+            anim.SetBool("Ice", false);
         }
         if (Input.GetKeyDown(KeyCode.Space) && Sort == 3 && PowerGlace == 3)
         {
             GameObject bullet = Instantiate(Ice3, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
+            anim.SetBool("Ice", true);
+        }
+        else
+        {
+            anim.SetBool("Ice", false);
         }
         if (Input.GetKeyDown(KeyCode.Space) && Sort == 3 && PowerGlace == 4)
         {
             GameObject bullet = Instantiate(Ice4, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
 
+            anim.SetBool("Ice", true);
+        }
+        else
+        {
+            anim.SetBool("Ice", false);
         }
         if (Input.GetKeyDown(KeyCode.Space) && Sort == 3 && PowerGlace >= 5)
         {
             GameObject bullet = Instantiate(Ice5, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
 
+            anim.SetBool("Ice", true);
         }
-  
+        else
+        {
+            anim.SetBool("Ice", false);
+        }
+
 
 
 
@@ -265,23 +344,27 @@ public class movement : MonoBehaviour
             CounterK.text = "" + KeyValue;
             Destroy(other.gameObject);
         }
-        if (other.tag == "UpFire")
+        if (other.tag == "UpFire" && PowerFeu <=5 )
         {
-
+            FireLVlValue += 1;
+            FireLvl.text = "" + FireLVlValue;
             PowerFeu += 1;  
        
             Destroy(other.gameObject);
         }
-        if (other.tag == "UpThunder")
+        if (other.tag == "UpThunder" && PowerEclair <= 5)
         {
 
+            ThunderLVlValue += 1;
+            ThunderLvl.text = "" + ThunderLVlValue;
             PowerEclair += 1;
 
             Destroy(other.gameObject);
         }
-        if (other.tag == "UpIce")
+        if (other.tag == "UpIce" && PowerGlace <= 5)
         {
-
+            IceLVlValue += 1;
+            IceLvl.text = "" + IceLVlValue;
             PowerGlace += 1;
 
             Destroy(other.gameObject);
