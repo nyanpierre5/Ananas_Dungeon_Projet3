@@ -1570,7 +1570,7 @@ GameObject:
   - component: {fileID: 3596619901918749699}
   - component: {fileID: 2450537684390480746}
   - component: {fileID: 2724201409621340601}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grillage Fermeture Bot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5008,7 +5008,7 @@ GameObject:
   - component: {fileID: 5159860413039313974}
   - component: {fileID: 1386725781467325569}
   - component: {fileID: 6787438911515169534}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grillage Fermeture Droite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6476,7 +6476,7 @@ GameObject:
   - component: {fileID: 4974798646631308210}
   - component: {fileID: 8104736411422598129}
   - component: {fileID: 4923545770694451705}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grillage Fermeture Gauche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6832,7 +6832,7 @@ GameObject:
   - component: {fileID: 8957212859454980741}
   - component: {fileID: 6111447244812225809}
   - component: {fileID: 2674833138471121053}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grillage Fermeture Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}

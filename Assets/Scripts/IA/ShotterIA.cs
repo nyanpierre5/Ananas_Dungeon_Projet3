@@ -14,6 +14,8 @@ public class ShotterIA : MonoBehaviour
     public GameObject _Bullet;
     public Transform _PositionLaunchBullet;
 
+    public GameObject _Canon;
+
     void Start()
     {
         _Player = GameObject.FindGameObjectWithTag("Player");
@@ -34,6 +36,7 @@ public class ShotterIA : MonoBehaviour
         {
             //Debug.Log("Can Shot");
             CanShot = true;
+            lookAtPlayer();
         }
         Debug.DrawRay(transform.position, DirectionRaycast, Color.blue);
 
@@ -46,6 +49,7 @@ public class ShotterIA : MonoBehaviour
             LastBullet.GetComponent<BulletTourIA>().lookAtTarget(_Player);
             _TimerFrequenceShot = 0;
         }
+
         
     }
 
@@ -57,7 +61,8 @@ public class ShotterIA : MonoBehaviour
 
     void lookAtPlayer()
     {
-        transform.LookAt(_Player.transform);
+        _Canon.transform.LookAt(_Player.transform);
+        Debug.Log("dege");
     }
 
     float CalculDistanceWithPlayer()

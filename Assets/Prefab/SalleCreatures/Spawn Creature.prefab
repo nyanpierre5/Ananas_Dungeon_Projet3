@@ -50,4 +50,11 @@ MonoBehaviour:
   - {fileID: 8438626062254542829, guid: c038f3856b587264cbb1bc3366304aa7, type: 3}
   - {fileID: 1678720383069960376, guid: f2ac5bbbd420d3143952664c0c6e9e5b, type: 3}
   - {fileID: 950488666595947872, guid: f6892b65d4a257b41afd4c8a544fa174, type: 3}
+  - {fileID: 4104536515639771117, guid: 129352eb836c12c429ec2939c4581eaa, type: 3}
+  - {fileID: 1994397940318995300, guid: ecb24e75b46576240a94feeaece859f5, type: 3}
+  - {fileID: 310080135515076740, guid: e16bbdc60f7d64e46b7414503eac4a01, type: 3}
+  _ObjectsCopied: []
+  _Creature: []
+  _FirstInstantiate: 0
   _NbPaternToSpawn: 2
+  _CameraSwapPos: {fileID: 0}
