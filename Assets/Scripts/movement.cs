@@ -30,7 +30,7 @@ public class movement : MonoBehaviour
 
     public Animator anim;
 
-
+    bool CanShoot;
 
 
     public GameObject FireSelection;
@@ -73,189 +73,165 @@ public class movement : MonoBehaviour
         ThunderLvl.text = "" + ThunderLVlValue;
         IceLvl.text = "" + IceLVlValue;
 
+        CanShoot = true;
     }
 
     void Update()
     {
 
         //Feu
-        if (Input.GetKeyDown(KeyCode.Space) && Sort == 1 && PowerFeu == 1)
+        if (Input.GetKeyDown(KeyCode.Space) && Sort == 1 && PowerFeu == 1 && CanShoot == true)
         {
             GameObject bullet = Instantiate(Fire1, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
 
-            anim.SetBool("fire", true);
+         
+
+            StartCoroutine("HaveShoot");
+            StartCoroutine("ShootFire");
         }
-        else
-        {
-            anim.SetBool("fire", false);
-        
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && Sort == 1 && PowerFeu == 2)
+     
+        if (Input.GetKeyDown(KeyCode.Space) && Sort == 1 && PowerFeu == 2 && CanShoot == true)
         {
             GameObject bullet = Instantiate(Fire2, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
-            anim.SetBool("fire", true);
+     
+            StartCoroutine("HaveShoot");
+            StartCoroutine("ShootFire");
         }
-        else
-        {
-            anim.SetBool("fire", false);
-
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && Sort == 1 && PowerFeu == 3)
+     
+        if (Input.GetKeyDown(KeyCode.Space) && Sort == 1 && PowerFeu == 3 && CanShoot == true)
         {
             GameObject bullet = Instantiate(Fire3, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
-            anim.SetBool("fire", true);
+    
+            StartCoroutine("HaveShoot");
+            StartCoroutine("ShootFire");
         }
-        else
-        {
-            anim.SetBool("fire", false);
-
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && Sort == 1 && PowerFeu == 4)
+    
+        if (Input.GetKeyDown(KeyCode.Space) && Sort == 1 && PowerFeu == 4 && CanShoot == true)
         {
             GameObject bullet = Instantiate(Fire4, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
-            anim.SetBool("fire", true);
+    
+            StartCoroutine("HaveShoot");
+            StartCoroutine("ShootFire");
         }
-        else
-        {
-            anim.SetBool("fire", false);
-
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && Sort == 1 && PowerFeu >= 5)
+     
+        if (Input.GetKeyDown(KeyCode.Space) && Sort == 1 && PowerFeu >= 5 && CanShoot == true)
         {
             GameObject bullet = Instantiate(Fire5, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
-            anim.SetBool("fire", true);
-        }
-        else
-        {
-            anim.SetBool("fire", false);
 
+            StartCoroutine("HaveShoot");
+            StartCoroutine("ShootFire");
         }
+     
 
 
         //Eclair
-        if (Input.GetKeyDown(KeyCode.Space) && Sort == 2 && PowerEclair == 1)
+        if (Input.GetKeyDown(KeyCode.Space) && Sort == 2 && PowerEclair == 1 && CanShoot == true)
         {
             GameObject bullet = Instantiate(Thunder1, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
 
-            anim.SetBool("thunder", true);
+       
+            StartCoroutine("HaveShoot");
+            StartCoroutine("ShootThunder");
         }
 
-        else
-        {
-            anim.SetBool("thunder", false);
-        
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && Sort == 2 && PowerEclair == 2)
+        if (Input.GetKeyDown(KeyCode.Space) && Sort == 2 && PowerEclair == 2 && CanShoot == true)
         {
             GameObject bullet = Instantiate(Thunder2, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
-            anim.SetBool("thunder", true);
+         
+            StartCoroutine("HaveShoot");
+            StartCoroutine("ShootThunder");
         }
 
-        else
-        {
-            anim.SetBool("thunder", false);
-
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && Sort == 2 && PowerEclair == 3)
+      
+        if (Input.GetKeyDown(KeyCode.Space) && Sort == 2 && PowerEclair == 3 && CanShoot == true)
         {
             GameObject bullet = Instantiate(Thunder3, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
-            anim.SetBool("thunder", true);
+         
+            StartCoroutine("HaveShoot");
+            StartCoroutine("ShootThunder");
         }
 
-        else
-        {
-            anim.SetBool("thunder", false);
-
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && Sort == 2 && PowerEclair == 4)
+     
+        if (Input.GetKeyDown(KeyCode.Space) && Sort == 2 && PowerEclair == 4 && CanShoot == true)
         {
             GameObject bullet = Instantiate(Thunder4, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
 
-            anim.SetBool("thunder", true);
+          
+            StartCoroutine("HaveShoot");
+            StartCoroutine("ShootThunder");
         }
 
-        else
-        {
-            anim.SetBool("thunder", false);
-
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && Sort == 2 && PowerEclair == 5)
+   
+        if (Input.GetKeyDown(KeyCode.Space) && Sort == 2 && PowerEclair == 5 && CanShoot == true)
         {
             GameObject bullet = Instantiate(Thunder5, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
-            anim.SetBool("thunder", true);
+           
+            StartCoroutine("HaveShoot");
+            StartCoroutine("ShootThunder");
         }
 
-        else
-        {
-            anim.SetBool("thunder", false);
-
-        }
+   
 
 
         // Glace
-        if (Input.GetKeyDown(KeyCode.Space) && Sort == 3 && PowerGlace == 1)
+        if (Input.GetKeyDown(KeyCode.Space) && Sort == 3 && PowerGlace == 1 && CanShoot == true)
         {
             GameObject bullet = Instantiate(Ice1, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
 
-            anim.SetBool("Ice", true);
+       
+            StartCoroutine("HaveShoot");
+            StartCoroutine("ShootIce");
         }
-        else
-        {
-            anim.SetBool("Ice", false);
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && Sort == 3 && PowerGlace == 2)
+     
+        if (Input.GetKeyDown(KeyCode.Space) && Sort == 3 && PowerGlace == 2 && CanShoot == true)
         {
             GameObject bullet = Instantiate(Ice2, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
-            anim.SetBool("Ice", true);
+       
+            StartCoroutine("HaveShoot");
+            StartCoroutine("ShootIce");
         }
-        else
-        {
-            anim.SetBool("Ice", false);
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && Sort == 3 && PowerGlace == 3)
+     
+        if (Input.GetKeyDown(KeyCode.Space) && Sort == 3 && PowerGlace == 3 && CanShoot == true)
         {
             GameObject bullet = Instantiate(Ice3, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
-            anim.SetBool("Ice", true);
+      
+            StartCoroutine("HaveShoot");
+            StartCoroutine("ShootIce");
         }
-        else
-        {
-            anim.SetBool("Ice", false);
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && Sort == 3 && PowerGlace == 4)
+      
+        
+        if (Input.GetKeyDown(KeyCode.Space) && Sort == 3 && PowerGlace == 4 && CanShoot == true)
         {
             GameObject bullet = Instantiate(Ice4, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
 
-            anim.SetBool("Ice", true);
+         
+            StartCoroutine("HaveShoot");
+            StartCoroutine("ShootIce");
         }
-        else
-        {
-            anim.SetBool("Ice", false);
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && Sort == 3 && PowerGlace >= 5)
+      
+        if (Input.GetKeyDown(KeyCode.Space) && Sort == 3 && PowerGlace >= 5 && CanShoot == true)
         {
             GameObject bullet = Instantiate(Ice5, bulletset.transform.position, Quaternion.identity) as GameObject;
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 400);
 
-            anim.SetBool("Ice", true);
+            StartCoroutine("HaveShoot");
+            StartCoroutine("ShootIce");
         }
-        else
-        {
-            anim.SetBool("Ice", false);
-        }
+   
 
 
 
@@ -426,12 +402,46 @@ public class movement : MonoBehaviour
     }
 
 
-    
+
+    private IEnumerator HaveShoot()
+    {
+
+        CanShoot = false;
+        yield return new WaitForSeconds(1.2f);
 
 
+        CanShoot = true;
+
+    }
+
+    private IEnumerator ShootFire()
+    {
+
+        anim.SetBool("fire", true);
+        yield return new WaitForSeconds(0.5f);
 
 
+        anim.SetBool("fire", false);
+
+    }
+    private IEnumerator ShootThunder()
+    {
+
+        anim.SetBool("thunder", true);
+        yield return new WaitForSeconds(0.5f);
 
 
+        anim.SetBool("thunder", false);
 
+    }
+    private IEnumerator ShootIce()
+    {
+
+        anim.SetBool("Ice", true);
+        yield return new WaitForSeconds(0.5f);
+
+
+        anim.SetBool("Ice", false);
+
+    }
 }
