@@ -14,6 +14,7 @@ public class CameraMove : MonoBehaviour
     private void Start() 
     {
         _PosInitial = transform.position;
+        _Target = _PosInitial;
     }
 
     void Update()

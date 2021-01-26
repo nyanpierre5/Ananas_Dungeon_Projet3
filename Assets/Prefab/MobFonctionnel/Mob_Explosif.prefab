@@ -510,6 +510,7 @@ MonoBehaviour:
   _Health: 100
   _NbTicBrulure: 0
   _IntervalEntreHitBrulure: 0.5
+  _TauxDropBonusEnPourcentage: 15
 --- !u!1001 &1270035468021494093
 PrefabInstance:
   m_ObjectHideFlags: 0
