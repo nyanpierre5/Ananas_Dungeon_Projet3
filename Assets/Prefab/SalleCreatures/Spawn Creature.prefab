@@ -57,6 +57,8 @@ MonoBehaviour:
   - {fileID: 6711353703705073667, guid: 4aa8526f6007256468006ac5f5470fca, type: 3}
   - {fileID: 7796890140562160401, guid: 9122a25d551b9184f8d3b4ded00bc599, type: 3}
   - {fileID: 7688815209852776662, guid: 5d77dfc7e078f594e9e5603e4119b3d2, type: 3}
+  - {fileID: 7775797593802604781, guid: 32649c4d15902ff48817bfa1d4b55676, type: 3}
+  - {fileID: 5745152015287692302, guid: 0bd73c1c0507b3c4289eab063f9e7a10, type: 3}
   _ObjectsCopied: []
   _Creature: []
   _FirstInstantiate: 0

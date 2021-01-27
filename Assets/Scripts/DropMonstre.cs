@@ -25,6 +25,7 @@ public class DropMonstre : MonoBehaviour
 
     void Start()
     {
+        _Health = _Health + (_Health * 0.2f) * GameManager._GameManager._Stage;
         _HealthMax = _Health;
         SetSlider();
     }
