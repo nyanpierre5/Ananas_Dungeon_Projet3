@@ -676,6 +676,9 @@ MonoBehaviour:
   IceSelection: {fileID: 236399902}
   CounterC: {fileID: 0}
   CounterK: {fileID: 0}
+  FireLvl: {fileID: 0}
+  ThunderLvl: {fileID: 0}
+  IceLvl: {fileID: 0}
   speed: 5
   controller: {fileID: 361252443}
   bulletset: {fileID: 1389559815}
@@ -760,6 +763,7 @@ MonoBehaviour:
   _Health: 9e+9
   _NbTicBrulure: 0
   _IntervalEntreHitBrulure: 0.5
+  _SliderHealthBarre: {fileID: 0}
 --- !u!1001 &408307368
 PrefabInstance:
   m_ObjectHideFlags: 0

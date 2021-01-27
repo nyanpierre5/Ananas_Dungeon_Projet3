@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LifePoint : MonoBehaviour
 {
@@ -13,20 +14,25 @@ public class LifePoint : MonoBehaviour
     private float _DommagePerHit;
     private float _TimerBurn;
 
+    //UI
+    public Slider _SliderHealthBarre;
+    
+
     void Start()
     {
         _HealthMax = _Health;
+        SetSlider();
     }
 
     public void LostHealth(float HealthLose)
     {
         _Health -= HealthLose;
-
         CheckIfDie();
     }
 
     public void CheckIfDie()
     {
+        SetSlider();
         if(_Health <= 0)
         {
             Debug.Log("Je meurs");
@@ -55,5 +61,12 @@ public class LifePoint : MonoBehaviour
     {
         _NbTicBrulure += _NbTicBurn;
         _DommagePerHit = _DegatPerHit;
+    }
+
+    public void SetSlider()
+    {
+        _SliderHealthBarre.maxValue = _HealthMax;
+        _SliderHealthBarre.minValue = 0;
+        _SliderHealthBarre.value = _Health;
     }
 }

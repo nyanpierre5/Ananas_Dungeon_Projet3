@@ -25,7 +25,7 @@ public class BulletEclair : MonoBehaviour
         if(_WhatIsAlive.Contains(other.gameObject.layer) && other.gameObject != _LastHitted)
         {
             _LastHitted = other.gameObject;
-            other.gameObject.GetComponent<DropMonstre>().LostHealth(_DommageHit);
+            other.gameObject.GetComponent<DropMonstre>().LostHealth(_DommageHit,2);
             _NbRebond ++;
 
             //Rebond

@@ -53,6 +53,10 @@ MonoBehaviour:
   - {fileID: 4104536515639771117, guid: 129352eb836c12c429ec2939c4581eaa, type: 3}
   - {fileID: 1994397940318995300, guid: ecb24e75b46576240a94feeaece859f5, type: 3}
   - {fileID: 310080135515076740, guid: e16bbdc60f7d64e46b7414503eac4a01, type: 3}
+  - {fileID: 4864264894829947720, guid: 9ba13068f75b7b1498626e100d3243da, type: 3}
+  - {fileID: 6711353703705073667, guid: 4aa8526f6007256468006ac5f5470fca, type: 3}
+  - {fileID: 7796890140562160401, guid: 9122a25d551b9184f8d3b4ded00bc599, type: 3}
+  - {fileID: 7688815209852776662, guid: 5d77dfc7e078f594e9e5603e4119b3d2, type: 3}
   _ObjectsCopied: []
   _Creature: []
   _FirstInstantiate: 0
