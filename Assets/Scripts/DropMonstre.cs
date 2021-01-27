@@ -8,6 +8,9 @@ public class DropMonstre : MonoBehaviour
     public float _Health;
     private float _HealthMax;
 
+    public GameObject ImmuneParticle;
+    public GameObject FireParticle;
+
     //Brulure
     public int _NbTicBrulure;
     public float _IntervalEntreHitBrulure = 0.5f;
@@ -36,6 +39,15 @@ public class DropMonstre : MonoBehaviour
         {
             _Health -= HealthLose;
         }
+        if (TypeAttack == _ImmunityAtWhat)
+        {
+            StartCoroutine("Shield");
+        }
+
+        if (TypeAttack != _ImmunityAtWhat && TypeAttack == 1)
+        {
+            StartCoroutine("Burn");
+        }
 
         CheckIfDie();
     }
@@ -63,6 +75,7 @@ public class DropMonstre : MonoBehaviour
                 _NbTicBrulure--;
                 CheckIfDie();
             }
+
         }
 
     }
@@ -89,5 +102,24 @@ public class DropMonstre : MonoBehaviour
         _SliderHealthBarre.maxValue = _HealthMax;
         _SliderHealthBarre.minValue = 0;
         _SliderHealthBarre.value = _Health;
+    }
+
+    private IEnumerator Shield()
+    {
+
+        ImmuneParticle.SetActive(true);
+        yield return new WaitForSeconds(0.7f);
+
+        ImmuneParticle.SetActive(false);
+
+    }
+    private IEnumerator Burn()
+    {
+
+        FireParticle.SetActive(true);
+        yield return new WaitForSeconds(0.7f);
+
+        FireParticle.SetActive(false);
+
     }
 }
