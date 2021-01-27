@@ -22,7 +22,7 @@ public class BulletGlace : MonoBehaviour
 
         if(_WhatIsAlive.Contains(other.gameObject.layer))
         {
-            other.gameObject.GetComponent<DropMonstre>().LostHealth(_DommageHit);
+            other.gameObject.GetComponent<DropMonstre>().LostHealth(_DommageHit, 3);
             other.gameObject.GetComponent<MoveIA>().Slow(_DurationSlow , _TauxSlow);
 
             Debug.Log("Glace");
@@ -39,7 +39,7 @@ public class BulletGlace : MonoBehaviour
 
         if(_WhatIsAlive.Contains(other.gameObject.layer))
         {
-            other.gameObject.GetComponent<DropMonstre>().LostHealth(_DommageHit);
+            other.gameObject.GetComponent<DropMonstre>().LostHealth(_DommageHit, 3);
             other.gameObject.GetComponent<MoveIA>().Slow(_DurationSlow , _TauxSlow);
             
             Debug.Log("Glace");
