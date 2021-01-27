@@ -41,7 +41,7 @@ public class movement : MonoBehaviour
      float CoinValue = 0;
 
     public Text CounterK;
-     float KeyValue = 0;
+    public float KeyValue = 0;
 
     public Text FireLvl;
     public Text ThunderLvl;
@@ -65,6 +65,8 @@ public class movement : MonoBehaviour
     //Orientation
     public float MyRotate = 0;
 
+    public float MyHauteur = 1.88f;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -74,6 +76,14 @@ public class movement : MonoBehaviour
         IceLvl.text = "" + IceLVlValue;
 
         CanShoot = true;
+
+        
+    }
+    private void LateUpdate() 
+    {
+        Vector3 AjustHauteur = transform.position;
+        AjustHauteur.y = MyHauteur;
+        transform.position = AjustHauteur;
     }
 
     void Update()
