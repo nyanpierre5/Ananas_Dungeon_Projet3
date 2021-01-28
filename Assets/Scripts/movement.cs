@@ -32,6 +32,8 @@ public class movement : MonoBehaviour
 
     bool CanShoot;
 
+    public AudioSource Pickup;
+
 
     public GameObject FireSelection;
     public GameObject ThunderSelection;
@@ -317,7 +319,7 @@ public class movement : MonoBehaviour
     {
         if (other.tag == "Coin")
         {
-
+            Pickup.Play();
             CoinValue += 1;
             CounterC.text = "" + CoinValue;
             Destroy(other.gameObject);
@@ -325,13 +327,14 @@ public class movement : MonoBehaviour
 
         if (other.tag == "Key")
         {
-
+            Pickup.Play();
             KeyValue += 1;
             CounterK.text = "" + KeyValue;
             Destroy(other.gameObject);
         }
         if (other.tag == "UpFire" && FireLVlValue <=4 )
         {
+            Pickup.Play();
             FireLVlValue += 1;
             FireLvl.text = "" + FireLVlValue;
             PowerFeu += 1;  
@@ -340,7 +343,7 @@ public class movement : MonoBehaviour
         }
         if (other.tag == "UpThunder" && ThunderLVlValue <= 4)
         {
-
+            Pickup.Play();
             ThunderLVlValue += 1;
             ThunderLvl.text = "" + ThunderLVlValue;
             PowerEclair += 1;
@@ -349,6 +352,7 @@ public class movement : MonoBehaviour
         }
         if (other.tag == "UpIce" && IceLVlValue <= 4)
         {
+            Pickup.Play();
             IceLVlValue += 1;
             IceLvl.text = "" + IceLVlValue;
             PowerGlace += 1;
@@ -438,6 +442,7 @@ public class movement : MonoBehaviour
     {
 
         anim.SetBool("thunder", true);
+
         yield return new WaitForSeconds(0.5f);
 
 

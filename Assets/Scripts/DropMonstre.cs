@@ -26,8 +26,11 @@ public class DropMonstre : MonoBehaviour
     //Immunity AT
     public int _ImmunityAtWhat; // 1 = fire // 2 = Eclair // 3 = Ice
 
+    public AudioSource Dmonster;
+
     void Start()
     {
+        Dmonster = GameObject.Find("DeathSound").GetComponent<AudioSource>();
         _Health = _Health + (_Health * 0.2f) * GameManager._GameManager._Stage;
         _HealthMax = _Health;
         SetSlider();
@@ -57,6 +60,7 @@ public class DropMonstre : MonoBehaviour
         SetSlider();
         if(_Health <= 0)
         {
+            Dmonster.Play();
             Looting();
             Destroy(gameObject);
         }

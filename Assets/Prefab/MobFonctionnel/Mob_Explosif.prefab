@@ -2633,7 +2633,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 7
+  m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3133898132629392232
 Rigidbody:
@@ -2747,6 +2747,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _Dommage: 15
+  ExplodeParticle: {fileID: 1826597790777741166, guid: d703be600e0271445a5107ef9f3ff06c, type: 3}
 --- !u!1 &3150931637248270878
 GameObject:
   m_ObjectHideFlags: 0
@@ -7732,9 +7733,10 @@ MonoBehaviour:
   FireParticle: {fileID: 4951299438249484455}
   _NbTicBrulure: 0
   _IntervalEntreHitBrulure: 0.5
-  _TauxDropBonusEnPourcentage: 15
+  _TauxDropBonusEnPourcentage: 35
   _SliderHealthBarre: {fileID: 7734269174162669783}
   _ImmunityAtWhat: 1
+  Dmonster: {fileID: 0}
 --- !u!1 &8621253777782733034
 GameObject:
   m_ObjectHideFlags: 0
@@ -8209,6 +8211,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Particule Shield
       objectReference: {fileID: 0}
+    - target: {fileID: 2528206619757380034, guid: e33cb71cdfd2c154a8a2afe82cfac914, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6427163904249624820, guid: e33cb71cdfd2c154a8a2afe82cfac914, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -8275,6 +8281,10 @@ PrefabInstance:
     - target: {fileID: 4102152344611608106, guid: 002a3cb88fc55674fb314f308051b8da, type: 3}
       propertyPath: m_Name
       value: Particule Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102152344611608106, guid: 002a3cb88fc55674fb314f308051b8da, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7967483896424642182, guid: 002a3cb88fc55674fb314f308051b8da, type: 3}
       propertyPath: m_RootOrder

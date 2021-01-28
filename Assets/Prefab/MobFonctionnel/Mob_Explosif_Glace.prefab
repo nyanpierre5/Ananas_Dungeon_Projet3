@@ -119,7 +119,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1614178850713256740
 Rigidbody:
@@ -233,6 +233,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _Dommage: 15
+  ExplodeParticle: {fileID: 1826597790777741166, guid: d703be600e0271445a5107ef9f3ff06c, type: 3}
 --- !u!1 &2607673375710687613
 GameObject:
   m_ObjectHideFlags: 0
@@ -8150,9 +8151,10 @@ MonoBehaviour:
   FireParticle: {fileID: 5761049274473179561}
   _NbTicBrulure: 0
   _IntervalEntreHitBrulure: 0.5
-  _TauxDropBonusEnPourcentage: 15
+  _TauxDropBonusEnPourcentage: 35
   _SliderHealthBarre: {fileID: 6219124144754952347}
   _ImmunityAtWhat: 3
+  Dmonster: {fileID: 0}
 --- !u!1 &7873004297004613543
 GameObject:
   m_ObjectHideFlags: 0

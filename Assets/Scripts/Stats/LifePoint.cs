@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LifePoint : MonoBehaviour
 {
@@ -16,10 +17,12 @@ public class LifePoint : MonoBehaviour
 
     //UI
     public Slider _SliderHealthBarre;
-    
+
+    public string scene;
 
     void Start()
     {
+
         _HealthMax = _Health;
         SetSlider();
     }
@@ -35,6 +38,7 @@ public class LifePoint : MonoBehaviour
         SetSlider();
         if(_Health <= 0)
         {
+            SceneManager.LoadScene(scene);
             Debug.Log("Je meurs");
             Destroy(gameObject);
         }
