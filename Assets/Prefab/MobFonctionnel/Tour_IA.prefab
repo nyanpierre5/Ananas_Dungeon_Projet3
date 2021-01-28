@@ -399,9 +399,10 @@ MonoBehaviour:
   FireParticle: {fileID: 6909941478034627962}
   _NbTicBrulure: 0
   _IntervalEntreHitBrulure: 0.5
-  _TauxDropBonusEnPourcentage: 15
+  _TauxDropBonusEnPourcentage: 45
   _SliderHealthBarre: {fileID: 7953609346570042358}
   _ImmunityAtWhat: 2
+  Dmonster: {fileID: 0}
 --- !u!114 &4675434562350836796
 MonoBehaviour:
   m_ObjectHideFlags: 0
