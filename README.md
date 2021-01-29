@@ -29,12 +29,12 @@ Adel Ait-Brim : J'ai découvert comment animer mon propre personnage 3D ainsi qu
 # License 
 - https://assetstore.unity.com/packages/vfx/particles/spells/magic-vfx-ice-free-170242 (particule sort glace)
 - https://assetstore.unity.com/packages/vfx/particles/spells/52-special-effects-pack-10419 (sort feu/éclair)
-musique :
-8bit Dungeon Level by Kevin MacLeod
+- musique :
+- 8bit Dungeon Level by Kevin MacLeod
 Link: https://incompetech.filmmusic.io/song/3331-8bit-dungeon-level
 License: https://filmmusic.io/standard-license
 
-Video Dungeon Boss by Kevin MacLeod
+- Video Dungeon Boss by Kevin MacLeod
 Link: https://incompetech.filmmusic.io/song/4583-video-dungeon-boss
 License: https://filmmusic.io/standard-license
-Mixamo.com
+- Mixamo.com
