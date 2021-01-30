@@ -26,6 +26,9 @@ Adel Ait-Brim : J'ai découvert comment animer mon propre personnage 3D ainsi qu
 # Lien youtube
 - https://youtu.be/GlddIqTiQ6s
 
+# Lien miro
+- https://miro.com/welcomeonboard/8WHwU8zjXOX46szlnSl0FJW8DJLb01C8qJb5x82PNNKLkzfY6h5jhu7lehlUkXrr
+
 # License 
 - https://assetstore.unity.com/packages/vfx/particles/spells/magic-vfx-ice-free-170242 (particule sort glace)
 - https://assetstore.unity.com/packages/vfx/particles/spells/52-special-effects-pack-10419 (sort feu/éclair)
